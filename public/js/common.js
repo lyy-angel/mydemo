@@ -2,7 +2,7 @@
 $('.navs ul').prev('a').on('click', function () {
 	$(this).next().slideToggle();
 });
-
+// 实现登录功能
 $('#loginForm').submit(function(){
     // 获取表单数据
     var formData = $(this).serialize();
@@ -25,4 +25,19 @@ $('#loginForm').submit(function(){
     // jQuery中的return false既可以阻止默认行为，也可以阻止冒泡
     // 原生js中的return false只能阻止默认行为，不能阻止冒泡
     return false;
+});
+// 实现退出功能
+$('#logout').click(function(){
+
+    $.ajax({
+        type : 'post',
+        url : '/api/logout',
+        dataType : 'json',
+        success : function(data){
+            if(data.code == 200){
+                location.href = '/login';
+            }
+        }
+    });
+    
 });
