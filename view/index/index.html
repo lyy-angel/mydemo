@@ -58,6 +58,13 @@
     <?php include('./view/common/script.html'); ?>
     
     <script>
+        var info = $.cookie('loginInfo');
+        if(info){
+            info = JSON.parse(info);
+            $('.aside .profile img').attr('src',info.tc_avatar);
+            $('.aside .profile h4').html(info.tc_name);
+        }
+
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
 
