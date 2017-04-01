@@ -1,13 +1,25 @@
 /*
     主页功能
 */
-define(['jquery','echarts','cookie'],function($,echarts){
+define(['jquery','echarts','template','cookie'],function($,echarts,template){
     // 初始化登录成功信息
     var info = $.cookie('loginInfo');
     if(info){
+        // 模板内容
+        var tpl = '<div class="avatar img-circle">'+
+                    '<img src="{{tc_avatar}}">'+
+                  '</div>'+
+                  '<h4>{{tc_name}}</h4>';
+        // 数据
         info = JSON.parse(info);
-        $('.aside .profile img').attr('src',info.tc_avatar);
-        $('.aside .profile h4').html(info.tc_name);
+        // 模板+数据->静态html片段
+        var render = template.compile(tpl);
+        var html = render(info);
+        // 把静态html片段追加到页面
+        $('.aside .profile').html(html);
+
+        // $('.aside .profile img').attr('src',info.tc_avatar);
+        // $('.aside .profile h4').html(info.tc_name);
     }
 
     // 实现退出功能

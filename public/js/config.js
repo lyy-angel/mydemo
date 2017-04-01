@@ -6,7 +6,8 @@ require.config({
         cookie : 'jquery-cookie/jquery.cookie',
         bootstrap : 'bootstrap/js/bootstrap.min',
         echarts : 'echarts/echarts.min',
-        nprogress : 'nprogress/nprogress'
+        nprogress : 'nprogress/nprogress',
+        template : 'artTemplate/template'
     },
     shim : {
         bootstrap : {
