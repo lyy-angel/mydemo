@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include('./view/common/style.html'); ?>
-    
 </head>
 <body>
     
@@ -48,20 +47,8 @@
                                 <th>操作</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>赵玉川</td>
-                                <td>布头儿</td>
-                                <td>28</td>
-                                <td>男</td>
-                                <td>15901256171</td>
-                                <td>
-                                    <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
-                                    <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
-                                    <a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
-                                </td>
-                            </tr>
+                        <tbody id="teacherList">
+                            <!-- 刨个坑 -->
                         </tbody>
                     </table>
                 </div>
@@ -119,7 +106,34 @@
             </div>
         </div>
     </div>
+
+    <script type="text/html" id="teacherTpl">
+        {{each list as item index}}
+            <tr>
+                <td>{{index + 1}}</td>
+                <td>{{item.tc_name}}</td>
+                <td>{{item.tc_roster}}</td>
+                <td>{{item.tc_birthday}}</td>
+                <td>
+                    {{if item.tc_gender == 0}}
+                        男
+                    {{else}}
+                        女
+                    {{/if}}
+                </td>
+                <td>{{item.cellphone}}</td>
+                <td>
+                    <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
+                    <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
+                    <a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
+                </td>
+            </tr>
+        {{/each}}
+    </script>
     <?php include('./view/common/script.html'); ?>
+    <script type="text/javascript">
+        require(['../js/teacher_list']);
+    </script>
     
 </body>
 </html>
