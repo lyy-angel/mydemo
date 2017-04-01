@@ -7,10 +7,16 @@ require.config({
         bootstrap : 'bootstrap/js/bootstrap.min',
         echarts : 'echarts/echarts.min',
         nprogress : 'nprogress/nprogress',
-        template : 'artTemplate/template'
+        template : 'artTemplate/template',
+        validate : 'validate/jquery-validate',
+        form : 'jquery-form/jquery.form',
+        util : '../js/util'
     },
     shim : {
         bootstrap : {
+            deps : ['jquery']
+        },
+        validate : {
             deps : ['jquery']
         }
     }
