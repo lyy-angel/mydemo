@@ -1,7 +1,10 @@
 /*
     讲师列表
 */
-define(['jquery','template','bootstrap'],function($,template){
+define(['jquery','template','util','bootstrap'],function($,template,util){
+    // 选中导航菜单
+    util.setMenu(location.pathname);
+    
     // 查询讲师的数据列表
     $.ajax({
         type : 'get',

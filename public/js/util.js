@@ -1,7 +1,7 @@
 /*
     工具模块
 */
-define([],function(){
+define(['jquery'],function($){
     return {
         getId : function(key){
             var params = location.search.substr(1);
@@ -16,6 +16,9 @@ define([],function(){
                     }
                 }
             }
+        },
+        setMenu : function(path){
+            $('.navs a[href="'+path+'"]').addClass('active');
         }
     }
 });

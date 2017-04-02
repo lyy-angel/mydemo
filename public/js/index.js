@@ -1,7 +1,9 @@
 /*
     主页功能
 */
-define(['jquery','echarts','cookie'],function($,echarts){
+define(['jquery','echarts','util','cookie'],function($,echarts,util){
+    // 选中导航菜单
+    util.setMenu(location.pathname);
 
     // 实现退出功能
     $('#logout').click(function(){

@@ -2,6 +2,10 @@
     添加讲师
 */
 define(['jquery','template','util','validate','form','datepicker','language'],function($,template,util){
+
+    // 选中导航菜单
+    util.setMenu('/teacher/list');
+
     // 获取讲师id
     var tc_id = util.getId('tc_id');
 
