@@ -10,8 +10,10 @@ require.config({
         template : 'artTemplate/template',
         validate : 'validate/jquery-validate',
         form : 'jquery-form/jquery.form',
+        region : 'jquery-region/jquery.region',
         datepicker : 'bootstrap-datepicker/js/bootstrap-datepicker',
         language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        ckeditor : 'ckeditor/ckeditor',
         util : '../js/util',
         overlay : '../js/overlay'
     },
@@ -24,6 +26,10 @@ require.config({
         },
         language : {
             deps : ['jquery','datepicker']
+        },
+        ckeditor : {
+            deps : ['jquery'],
+            exports : 'CKEDITOR'
         }
     }
 });
