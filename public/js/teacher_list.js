@@ -1,7 +1,7 @@
 /*
     讲师列表
 */
-define(['jquery','template','util','bootstrap'],function($,template,util){
+define(['jquery','template','util','bootstrap','overlay'],function($,template,util){
     // 选中导航菜单
     util.setMenu(location.pathname);
     

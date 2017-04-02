@@ -12,7 +12,8 @@ require.config({
         form : 'jquery-form/jquery.form',
         datepicker : 'bootstrap-datepicker/js/bootstrap-datepicker',
         language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
-        util : '../js/util'
+        util : '../js/util',
+        overlay : '../js/overlay'
     },
     shim : {
         bootstrap : {

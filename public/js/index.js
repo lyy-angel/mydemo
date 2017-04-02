@@ -1,7 +1,7 @@
 /*
     主页功能
 */
-define(['jquery','echarts','util','cookie'],function($,echarts,util){
+define(['jquery','echarts','util','cookie','overlay'],function($,echarts,util){
     // 选中导航菜单
     util.setMenu(location.pathname);
 
