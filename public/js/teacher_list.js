@@ -1,7 +1,7 @@
 /*
     讲师列表
 */
-define(['jquery','template'],function($,template){
+define(['jquery','template','bootstrap'],function($,template){
     // 查询讲师的数据列表
     $.ajax({
         type : 'get',
@@ -38,9 +38,34 @@ define(['jquery','template'],function($,template){
                         }
                     });
                 });
+                // 点击查看讲师详细信息
+                $('.preview').click(function(){
+                    // 获取要查询的讲师id
+                    var tc_id = $(this).closest('td').attr('data-tcId');
+                    // 发送查询请求
+                    $.ajax({
+                        type : 'get',
+                        url : '/api/teacher/view',
+                        data : {tc_id : tc_id},
+                        dataType : 'json',
+                        success : function(data){
+                            // 去掉地区之间的竖线
+                            // data.result.tc_hometown = data.result.tc_hometown.replace(/\|/g,' ');
+                            data.result.tc_hometown = data.result.tc_hometown.split('|').join(' ');
+                            // 渲染模板
+                            var html = template('modalTpl',data.result);
+                            $('#modalInfo').html(html);
+                            // 显示弹窗
+                            $('#teacherModal').modal();
+                        }
+                    });
+
+                });
+
             }
         }
     });
+
 
     
 });
