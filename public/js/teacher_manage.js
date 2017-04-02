@@ -1,7 +1,7 @@
 /*
     添加讲师
 */
-define(['jquery','template','util','validate','form'],function($,template,util){
+define(['jquery','template','util','validate','form','datepicker','language'],function($,template,util){
     // 获取讲师id
     var tc_id = util.getId('tc_id');
 

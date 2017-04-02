@@ -10,6 +10,8 @@ require.config({
         template : 'artTemplate/template',
         validate : 'validate/jquery-validate',
         form : 'jquery-form/jquery.form',
+        datepicker : 'bootstrap-datepicker/js/bootstrap-datepicker',
+        language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         util : '../js/util'
     },
     shim : {
@@ -18,6 +20,9 @@ require.config({
         },
         validate : {
             deps : ['jquery']
+        },
+        language : {
+            deps : ['jquery','datepicker']
         }
     }
 });
