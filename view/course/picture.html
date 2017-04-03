@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include('./view/common/style.html'); ?>
+    <link rel="stylesheet" type="text/css" href="/public/assets/jcrop/Jcrop.min.css">
 </head>
 <body>
-    
+    <form id="cropInfo">
+        <input type="hidden" name="x" id="x">
+        <input type="hidden" name="y" id="y">
+        <input type="hidden" name="w" id="w">
+        <input type="hidden" name="h" id="h">
+    </form>
     <!-- 侧边栏 -->
     <?php include('./view/common/aside.html'); ?>
     <!-- 主体 -->
@@ -79,7 +85,7 @@
                     <input type="file" name="选中图片" id="upfile">
                     </div>
                     <div class="col-xs-2">
-                        <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                        <input type="button" id="cropbtn" value="裁切图片" class="btn btn-warning btn-sm">
                     </div>
                 </div>
             </div>
