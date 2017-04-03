@@ -18,7 +18,10 @@ define(['jquery'],function($){
             }
         },
         setMenu : function(path){
-            $('.navs a[href="'+path+'"]').addClass('active');
+            $('.navs a[href="'+path+'"]')
+            .addClass('active')
+            .closest('ul')
+            .show();
         }
     }
 });
